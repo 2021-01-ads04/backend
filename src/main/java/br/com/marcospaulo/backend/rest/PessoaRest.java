@@ -12,30 +12,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.marcospaulo.backend.dao.ProdutoDao;
-import br.com.marcospaulo.backend.model.Produto;
+import br.com.marcospaulo.backend.dao.PessoaDao;
+import br.com.marcospaulo.backend.model.Pessoa;
 
 /**
  * @author Marcos Paulo Paixão
  *
  */
 @RestController
-@RequestMapping("/produtos")
-public class ProdutoRest {
-	
+@RequestMapping("/pessoas")
+public class PessoaRest {
+
 	/* Atributos */
 	@Autowired
-	private ProdutoDao dao;
+	private PessoaDao dao;
 
 	/* Métodos */
 	/**
 	 * @return
 	 */
-	/**
-	 * @return
-	 */
 	@GetMapping
-	public List<Produto> get() {
+	public List<Pessoa> get() {
 		return dao.findAll();
 	}
 
@@ -44,24 +41,24 @@ public class ProdutoRest {
 	 * @return
 	 */
 	@GetMapping("{id}")
-	public Produto getById(@PathVariable("id") long id) {
+	public Pessoa getById(@PathVariable("id") long id) {
 		return dao.findById(id);
 	}
 
 	/**
-	 * @param produto
+	 * @param pessoa
 	 */
 	@PostMapping
-	public void post(@RequestBody Produto produto) {
-		dao.save(produto);
+	public void post(@RequestBody Pessoa pessoa) {
+		dao.save(pessoa);
 	}
 
 	/**
-	 * @param produto
+	 * @param pessoa
 	 */
 	@PutMapping
-	public void put(@RequestBody Produto produto) {
-		dao.save(produto);
+	public void put(@RequestBody Pessoa pessoa) {
+		dao.save(pessoa);
 	}
 
 	/**
