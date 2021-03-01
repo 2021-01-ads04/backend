@@ -20,7 +20,7 @@ import br.com.marcospaulo.backend.model.Pessoa;
  *
  */
 @RestController
-@RequestMapping("/pessoas")
+@RequestMapping("/pessoa")
 public class PessoaRest {
 
 	/* Atributos */

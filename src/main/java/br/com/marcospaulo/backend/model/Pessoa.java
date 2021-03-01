@@ -11,7 +11,7 @@ public class Pessoa {
 
 	/* Atributos */
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pes_id")
 	private long id;
 	

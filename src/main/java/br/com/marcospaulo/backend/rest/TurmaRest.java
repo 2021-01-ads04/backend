@@ -39,6 +39,6 @@ public class TurmaRest {
 	
 	@PutMapping
 	public void put(@RequestBody Turma turma) {
-		
+		turmaDao.save(turma);
 	}
 }
