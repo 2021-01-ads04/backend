@@ -1,18 +1,24 @@
 package br.com.marcospaulo.backend.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "pessoas")
 public class Pessoa {
 
 	/* Atributos */
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name="pes_id")
 	private long id;
+	
+	@Column(name="pes_nome", length = 100, nullable = false)
 	private String nome;
+	
+	@Column(name="pes_idade", nullable = false)
 	private int idade;
 
 	/* Métodos */
